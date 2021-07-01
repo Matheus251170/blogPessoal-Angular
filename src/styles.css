@@ -3,3 +3,12 @@
 html{
     scroll-behavior: smooth;
 }
+
+.fs-16
+{
+    font-size: 19px;
+}
+a
+{
+    cursor: pointer;
+}
