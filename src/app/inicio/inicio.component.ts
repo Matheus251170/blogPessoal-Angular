@@ -19,7 +19,7 @@ export class InicioComponent implements OnInit {
     if(environment.token == ''){
       alert('Sua sessão expirou!')
 
-      this.router.navigate(['/entrar'])
+      this.router.navigate(['/tema'])
     }
   }
 
