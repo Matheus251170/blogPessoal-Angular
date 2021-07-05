@@ -14,18 +14,19 @@ export class TemaService {
   token = {
     headers: new HttpHeaders().set('Authorization', environment.token)
   }
-
+    
+  refreshToken(){
+    this.token = {
+      headers: new HttpHeaders().set('Authorization', environment.token)
+    }
+  }
   getAllTema(): Observable<Tema[]>{
 
-    return this.http.get<Tema[]>('https://backendblogpessoal.herokuapp.com/tema', this.token)
+    return this.http.get<Tema[]>('http://localhost:8080/tema', this.token)
   }
 
   postTema(tema: Tema): Observable<Tema>{
 
-    console.log(this.token)
-
-    return this.http.post<Tema>('https://backendblogpessoal.herokuapp.com/tema', tema, this.token)
-
-
+    return this.http.post<Tema>('http://localhost:8080/tema', tema, this.token)
   }
 }
