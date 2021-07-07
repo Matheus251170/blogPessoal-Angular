@@ -35,6 +35,8 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(){
 
+    window.scroll(0,0)
+
     if(environment.token == ''){
       alert('Sua sessão expirou!')
 
