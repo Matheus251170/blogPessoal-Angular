@@ -1,0 +1,34 @@
+<div class="container mb-5 mt-5">
+
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center text-secondary">Apagar postagem</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h4 class="text-center text-secondary mt-4">Tem certeza que deseja apagar essa postagem?</h4>
+        </div>
+    </div>
+
+        <div class="row d-flex justify-content-center">
+           <div class="col-md-12">
+                <div class="card text-center mt-5 mr-5">
+                    <div class="card-body">
+                        <h5 class="card-title">{{post.titulo}}</h5>
+                        <p class="card-text mt-3">{{post.texto}}</p>
+                        <p class="card-text"><small class="text-muted">{{post.date | date: 'dd/MM/yyyy'}} às {{post.date | date: 'HH:mm'}}</small></p>
+                    </div>
+                </div>
+           </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-12 d-flex justify-content-center">
+                <button [routerLink]="['/inicio']" class="btn btn-danger mr-3">Não</button>
+                <button class="btn btn-success" (click)='apagar()'>Sim</button>
+            </div>
+        </div>
+
+</div>
