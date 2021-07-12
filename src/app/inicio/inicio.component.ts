@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
@@ -18,6 +19,8 @@ export class InicioComponent implements OnInit {
 
   listaPostagem: Postagem[]
   postagem: Postagem = new Postagem()
+  tituloPost: string
+  nomeTema: string
 
   tema: Tema = new Tema()
   listaTema: Tema[]
@@ -92,6 +95,28 @@ export class InicioComponent implements OnInit {
       this.postagem = new Postagem()
       this.getAllPostagens()
     })
+  }
+
+  findByTituloPostagem(){
+
+    if(this.tituloPost == ''){
+      this.getAllPostagens()
+    }
+    else{
+      this.postagemService.getByTituloPostagem(this.tituloPost).subscribe((resp: Postagem[]) =>{
+        this.listaPostagem = resp
+      })
+    }
+  }
+
+  findByNomeTema(){
+    if(this.nomeTema == ''){
+      this.getAllTemas()
+    }
+    else{
+      this.temaService.getByNomeTema(this.nomeTema).subscribe((resp: Tema[])=>
+      this.listaTema = resp)
+    }
   }
 
 }
