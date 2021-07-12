@@ -38,7 +38,7 @@ export class InicioComponent implements OnInit {
     private router: Router,
     private temaService: TemaService,
     private postagemService: PostagemService,
-    private authService: AuthService
+    public authService: AuthService
   ) { }
 
   ngOnInit(){
