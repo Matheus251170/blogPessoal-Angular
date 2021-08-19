@@ -65,7 +65,7 @@
                             <h5 class="card-title">{{item.titulo}}</h5>
                             <small class="text-muted">Tema: {{item.tema.descricao}}</small>
                             <p class="card-text mt-3">{{item.texto}}</p>
-                            <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm'}}</small></p>
+                            <p class="card-text"><small class="text-muted">{{item.date | date: 'dd/MM/yyyy'}} às {{item.date | date: 'HH:mm a'}}</small></p>
                             <p class="card-text"><small class="text-muted">by: {{item.usuario.nome}}</small></p>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
             <div class="row d-flex justify-content-center mt-5 mb-5">
                 <div class="col-md-4">
                     <div class="form-group">
-                        <input type="text" class="form-control" id="titulo" placeholder="Pesquise por titulo" [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>
+                        <input type="text" class="form-control" id="titulo" placeholder="Pesquise por tema" [(ngModel)]='nomeTema' (keyup)='findByNomeTema()'>
                     </div>
                 </div>
             </div>
