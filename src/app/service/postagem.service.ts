@@ -18,31 +18,31 @@ export class PostagemService {
 
   getAllPostagens(): Observable<Postagem[]>{
 
-    return this.http.get<Postagem[]>('https://blogpessoalmatheus.herokuapp.com/postagens/todos', this.token)
+    return this.http.get<Postagem[]>('https://blogpessoal-backend-production.up.railway.app/postagens/todos', this.token)
   }
 
   getByIdPostagem(id: number): Observable<Postagem>{
-    return this.http.get<Postagem>(`https://blogpessoalmatheus.herokuapp.com/postagens/${id}`, this.token)
+    return this.http.get<Postagem>(`https://blogpessoal-backend-production.up.railway.app/postagens/${id}`, this.token)
   }
 
   getByNomeTema(nome: string): Observable<Tema[]>{
-    return this.http.get<Tema[]>(`https://blogpessoalmatheus.herokuapp.com/nome/${nome}`, this.token)
+    return this.http.get<Tema[]>(`https://blogpessoal-backend-production.up.railway.app/nome/${nome}`, this.token)
   }
 
   getByTituloPostagem(titulo: string): Observable<Postagem[]>{
-    return this.http.get<Postagem[]>(`https://blogpessoalmatheus.herokuapp.com/postagens/titulo/${titulo}`, this.token)
+    return this.http.get<Postagem[]>(`https://blogpessoal-backend-production.up.railway.app/postagens/titulo/${titulo}`, this.token)
   }
 
   postPostagem(postagem: Postagem) : Observable<Postagem>{
 
-    return this.http.post<Postagem>('https://blogpessoalmatheus.herokuapp.com/postagens', postagem, this.token)
+    return this.http.post<Postagem>('https://blogpessoal-backend-production.up.railway.app/postagens', postagem, this.token)
   }
 
   putPostagem(postagem: Postagem): Observable<Postagem>{
-    return this.http.put<Postagem>('https://blogpessoalmatheus.herokuapp.com/postagens', postagem, this.token)
+    return this.http.put<Postagem>('https://blogpessoal-backend-production.up.railway.app/postagens', postagem, this.token)
   }
 
   deletePostagem(id: number){
-    return this.http.delete(`https://blogpessoalmatheus.herokuapp.com/postagens/${id}`, this.token)
+    return this.http.delete(`https://blogpessoal-backend-production.up.railway.app/postagens/${id}`, this.token)
   }
 }

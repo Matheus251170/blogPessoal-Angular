@@ -16,18 +16,18 @@ export class AuthService {
 
   entrar(userLogin: UserLogin): Observable<UserLogin> {
     
-    return this.http.post<UserLogin>('https://blogpessoalmatheus.herokuapp.com/usuarios/logar', userLogin)
+    return this.http.post<UserLogin>('https://blogpessoal-backend-production.up.railway.app/usuarios/logar', userLogin)
   }
 
   cadastrar(user: User): Observable<User>{
 
-    return this.http.post<User>('https://blogpessoalmatheus.herokuapp.com/usuarios/cadastrar', user)
+    return this.http.post<User>('https://blogpessoal-backend-production.up.railway.app/usuarios/cadastrar', user)
 
   }
 
   getByIdUser(id: number): Observable<User>{
 
-    return this.http.get<User>(`https://blogpessoalmatheus.herokuapp.com/usuarios/${id}`)
+    return this.http.get<User>(`https://blogpessoal-backend-production.up.railway.app/usuarios/${id}`)
   }
 
   logado(){
